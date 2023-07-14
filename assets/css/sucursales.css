@@ -1,0 +1,150 @@
+.grilla {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-areas:
+        "navbar navbar"
+        "fotos fotos"
+        "pie-de-pagina pie-de-pagina";
+    grid-template-rows: 150px auto 100px;
+}
+
+.fotos {
+    position: relative;
+    display: flex;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    width: 1440px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.item {
+    position: relative;
+    flex-basis: 30%;
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    color: #fffbd6;
+    margin: 5px;
+    padding: 5px 5px;
+    align-items: center;
+    background-color: #560001;
+    border-radius: 4px;
+    opacity: 0.75;
+    text-align: center;
+}
+
+.pie-de-pagina {
+    bottom: -150px;
+    z-index: 0;
+}
+@media (max-width: 992px) {
+    .enlace {
+        padding-left: 20px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grilla {
+        width: 100%;
+        display: flex;
+        position: relative;
+        height: auto;
+        flex-direction: column;
+    }
+
+    /* img {
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        height: 250px;
+    } */
+    .enlace .logo {
+        float: left;
+        height: 150px;
+    }
+
+    .checkbtn,
+    .material-symbols-outlined {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #560001;
+        top: 210px;
+        left: -100%;
+        text-align: center;
+        transition: all 0.5s;
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    li a:hover,
+    li a.active {
+        background: #fffbd6;
+        color: #560001;
+    }
+    #check:checked ~ ul {
+        left: 0%;
+    }
+    .enlace .logo {
+        float: left;
+        height: 150px;
+    }
+
+    .fotos {
+        width: 300px;
+        display: flex;
+        margin-top: 100px;
+        right: -30%;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        flex-basis: 100%;
+        width: 200px;
+        font-size: 16px;
+    }
+    .pie-de-pagina {
+        width: 100%;
+        position: absolute;
+        bottom: -75%;
+    }
+    .pie-de-pagina .grupo-1 .red-social a {
+        display: inline-block;
+        text-decoration: none;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .box {
+        font-size: 1em;
+        margin-top: 10px;
+        margin-left: 35px;
+        line-height: 15px;
+    }
+    .pie-de-pagina .grupo-2 {
+        background-color: #560001;
+        padding: 5px 5px;
+        text-align: center;
+        color: #fffbd6;
+    }
+}

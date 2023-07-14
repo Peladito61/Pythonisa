@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/contacto.css">
+    <script src="https://kit.fontawesome.com/cbd558f425.js" crossorigin="anonymous"></script>
+    <link rel="icon" href=".assets/img/icono.ico">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="imagen/icono.ico">
+    <title>Contacto - Panadería La Pythonisa</title>
+</head>
+
+<body>
+    <!--Área grid  -->
+    <div class="grilla">
+        <nav class="navbar">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <span class="material-symbols-outlined">menu</span>
+            </label>
+            <a href="#" class="enlace">
+                <img src="./assets/img/Pythonisa_Isologo.png" class="logo" alt="Logo">
+            </a>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <!-- <div class="linea"></div> -->
+                <li><a href="productos.html">Productos</a></li>
+                <!-- <div class="linea"></div> -->
+                <li><a href="sucursales.html">Sucursales</a></li>
+                <!-- <div class="linea"></div> -->
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+
+        <main class="contenido_datosClientes">
+            <!-- comienza formulario -->
+            <form action="" class="form_datosCliente" id="formulario" name="formulario">
+                <!-- Nombre y apellido del cliente-->
+                <fieldset class="nombreapellido">
+                    <div class="formulario__grupo" id="grupo__nombreapellido">
+                        <label for="nombreapellido" class="nombreapellido">Nombre y Apellido</label>
+                        <input type="text" id="nombreapellido" name="nombreapellido" class="input-padron" required
+                            placeholder="Carlos Perez">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        <p class="formulario__input-error">Este campo no puede estar vacio.</p>
+                    </div>
+                </fieldset>
+                <!-- Correo electrónico del cliente-->
+                <fieldset class="correoelectronico">
+                    <div class="formulario__grupo" id="grupo__correoelectronico">
+                        <label for="correoelectronico" class="correoelectronico">Correo Electrónico</label>
+                        <div class="formulario__grupo-input">
+                            <input type="email" id="correoelectronico" name="correoelectronico" class="input-padron"
+                                required placeholder="email@dominio.com" onclick="return validarEmail()">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">El correo sólo puede contener letras, números, puntos,
+                            guiones y guión bajo.</p>
+
+                    </div>
+
+                </fieldset>
+
+                <!-- Teléfono del cliente-->
+                <fieldset class="telefono">
+                    <div class="formulario__grupo" id="grupo__telefono">
+                        <div class="formulario__grupo-input">
+                            <label for="telefono" class="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" class="input-padron" required
+                                placeholder=" 12354256">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Este campo sólo puede contener números, el máximo son 14
+                            dígitos.</p>
+                    </div>
+                </fieldset>
+                <!-- Texto adicional del cliente -->
+                <fieldset class="mensaje">
+                    <div class="formulario__grupo" id="grupo__mensaje">
+                        <label for="mensaje" class="mensaje">Mensaje</label>
+                        <textarea cols="55" rows="70" id="mensaje" class="input-padron"
+                            placeholder="Información adicional"></textarea>
+                    </div>
+                </fieldset>
+            </form>
+        </main>
+        <!--Formas de contacto con el cliente -->
+        <fieldset class="contenido_formContacto">
+            <legend>¿Cómo le gustaría que lo contactemos?</legend>
+            <div class="contacto">
+                <label for="radio-email" class="radio-email"><input type="radio" name="contacto" value="email"
+                        id="radio-email" class="checkbox-input-email">Email</label>
+                <label for="radio-telefono" class="radio-telefono"><input type="radio" name="contacto" value="telefono"
+                        id="radio-telefono" class="checkbox-input-telefono">Teléfono</label>
+                <label for="radio-whatsapp" class="radio-whatsapp"><input type="radio" name="contacto" value="whatsapp"
+                        id="radio-whatsapp" class="checkbox-input-whatsapp" checked>WhatsApp</label>
+            </div>
+        </fieldset>
+        <!-- Selección del día y hora de envio del producto-->
+        <fieldset class="contenido_DiaHoraEnvio">
+            <legend>¿Qué día y horario prefiere que le enviemos el y/o los producto/s?</legend>
+            <div class="contenido_grid_diaHora">
+                <select class="dia">
+                    <option>Lunes</option>
+                    <option>Miércoles</option>
+                    <option>Viernes</option>
+                </select>
+                <input class="hora" type="time" value="08:00" min="08:00" max="20:00" step="3600">
+            </div>
+        </fieldset>
+        <!-- Tabla -->
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Horario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lunes</td>
+                    <td>08h ~ 20h</td>
+                </tr>
+                <tr>
+                    <td>Miércoles</td>
+                    <td>08h ~ 20h</td>
+                </tr>
+                <tr>
+                    <td>Viernes</td>
+                    <td>08h ~ 20h</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Botón enviar-->
+        <div class="btn_enviar" id="enviar">
+            <botton type="submit" value="Enviar formulario" id="btn" class="enviar"> Enviar formulario </button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
+        </div>
+        <!--zona script -->
+
+        <footer class="pie-de-pagina">
+            <div class="grupo-1">
+                <div class="box">
+                    <h2>SOBRE NOSOTROS</h2>
+                    <p> Las fotografías en este sitio fueron extraídas de la web y son de procedencia indetreminada,
+                        estan modificadas y adaptadas a solo efecto de ser presentadas en un Trabajo Práctico del
+                        programa Codo a Codo del Ministerio de Educación del Gobierno de Buenos Aires CABA</p>
+                </div>
+                <div class="box">
+                    <figure>
+                        <a href="#">
+                            <img src="./assets/img/Pit_02_sin_fondo.png" alt="pythonisa">
+                        </a>
+                    </figure>
+                </div>
+                <div class="box">
+                    <h2>SIGUENOS</h2>
+                    <div class="red-social">
+                        <a href="#" class="fa fa-facebook"></a>
+                        <a href="#" class="fa fa-instagram"></a>
+                        <a href="#" class="fa fa-twitter"></a>
+                        <a href="#" class="fa fa-youtube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="grupo-2">
+                <small>&copy;2023 <b>La Pythonisa</b> - Todos los Derechos Reservados.</small>
+            </div>
+        </footer>
+    </div>
+
+    <script
+        src="E:\USUARIO NUEVO\Documents\Documents\CURSO_CODO_A_CODO_full_python_2023\FRONT_END_PYTHON\trabajo_grupal\prueba_grid6\js/validacion.js"
+        type="text/javascript"></script>
+    <script type="text/javascript"
+        src="E:\USUARIO NUEVO\Documents\Documents\CURSO_CODO_A_CODO_full_python_2023\FRONT_END_PYTHON\trabajo_grupal\prueba_grid6\js/formulario.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
